@@ -1,0 +1,52 @@
+.main-header {
+    height: 80px;
+    background-color: rgb(0, 177, 94);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: block;
+
+    .main-logo{
+        float: left;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        list-style: none;
+        margin-left: 30px;
+        margin-top: 10px;
+        &:hover{
+            color: #ff8c00;
+            background: -webkit-linear-gradient(0deg, #40e0d0, #ff8c00, #ff0080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .main-logo-link{
+            text-decoration: none;
+            font-size: 45px;
+            color: white;
+            font-family: "logo";
+        }
+    }
+}
+
+.main-header-menus {
+    float: right;
+    padding-right: 20px;
+    display: flex;
+    li {
+        margin-left: 15px;
+        list-style: none;
+        margin-top: 44px;
+        .header-menus-li{
+            font-size: 13px;
+            color: white;
+            margin: 0 10px;
+            font-family: "menu-bold";
+        }
+    }
+}
+
+.header-menus-li:hover {
+    color: white;
+    text-decoration: none;
+}
+
