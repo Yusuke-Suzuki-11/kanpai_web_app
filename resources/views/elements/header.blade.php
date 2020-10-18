@@ -15,6 +15,10 @@
             <li>
                 <a href="{{route('login')}}" class="header-menus-li">test</a>
             </li>
+            <li>
+                <a class="show-signout-li" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+            </li>
         </ul>
     </div>
     @else
@@ -24,11 +28,12 @@
                 <a href="{{route('login')}}" class="header-menus-li" >アプリの使い方</a>
                 </li>
                 <li>
-                    <a href="#" class="header-menus-li">新規登録</a>
+                    <a href="{{route('register')}}" class="header-menus-li">新規登録</a>
                 </li>
                 <li>
-                    <a href="#" class="header-menus-li">ログイン</a>
+                    <a href="{{route('login')}}" class="header-menus-li">ログイン</a>
                 </li>
+
             </ul>
         </div>
     @endif
