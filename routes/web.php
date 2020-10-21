@@ -12,5 +12,5 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
     Route::get('index', 'UserController@index')->name('user.index');
     Route::get('show/{id}', 'UserController@show')->name('user.show');
     Route::get('edit/{id}', 'UserController@edit')->name('user.edit');
-Route::post('update/{id}', 'UserController@update')->name('user.update');
+    Route::post('update/{id}', 'UserController@user_profile_update')->name('user.update');
 });

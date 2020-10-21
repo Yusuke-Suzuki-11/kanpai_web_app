@@ -7,5 +7,7 @@
 <p>プロフ画像</p>
 
 <p><a href="{{ route('user.index') }}">ユーザー一覧に戻る</a></p>
+<p><a href="{{ route('user.edit', ['id' => $UserRow->id]) }}">編集する</a></p>
+
 
 @endsection
