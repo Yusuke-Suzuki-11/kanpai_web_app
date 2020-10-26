@@ -7,13 +7,13 @@
     <div>
         <ul class="main-header-menus">
             <li>
-                <a href="#" class="header-menus-li" >これ何</a>
+                <a href="#" class="header-menus-li" >ダミー</a>
             </li>
             <li>
-                <a href="{{route('register')}}" class="header-menus-li">test</a>
+                <a href="{{route('register')}}" class="header-menus-li">ダミー２</a>
             </li>
             <li>
-                <a href="{{route('login')}}" class="header-menus-li">test</a>
+                <a href="{{route('login')}}" class="header-menus-li">ダミー３</a>
             </li>
             <li>
                 <a class="show-signout-li" rel="nofollow" data-method="POST" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">ログアウト</a>

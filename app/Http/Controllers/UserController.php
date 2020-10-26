@@ -23,6 +23,8 @@ class UserController extends Controller
             $SearchUserRowset = User::where("name", "like", "%" . $request->keyWord . "%")->get();
         }
 
+
+
         return view("user.index", compact("UserRowset", "SearchUserRowset"));
     }
 
@@ -52,14 +54,30 @@ class UserController extends Controller
             abort(404);
         }
 
-        if ($request->name) {
-            $UserRow->name = $request->name;
-        }
-        if ($request->name) {
-            $UserRow->email = $request->email;
-        }
+        $UserRow->name = $request->name;
+        $UserRow->email = $request->email;
+        $UserRow->save();
+        return view("user.show", compact("UserRow"));
+    }
+
+    public function member_management(Request $request)
+    {
+        $UserRow = new User;
+
+        $UserRow->fill([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => $request->email,
+            "gender_type" => $request->gender_type,
+            "birthday" => $request->birthday,
+            "user_type" => 5,
+            "transfer_count" => 0,
+            "difficulty_point" => $request->difficulty_point,
+            "membership_num" => $request->membership_num,
+        ]);
+
         $UserRow->save();
 
-        return view("user.show", compact("UserRow"));
+        return view("user.index")->with("UserRowset", User::all());
     }
 }
