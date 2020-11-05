@@ -19,7 +19,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'gender_type',
         'birthday',
         'user_type',
         'transfer_count',

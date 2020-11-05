@@ -14,12 +14,12 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer("gender_type");
-            $table->integer("user_type");
+            $table->integer("gender_type")->nullable();
+            $table->integer("user_type")->nullable();
             $table->dateTime("birthday")->nullable();
-            $table->integer("transfer_count");
-            $table->integer("difficulty_point");
-            $table->integer("membership_num");
+            $table->integer("transfer_count")->nullable();
+            $table->integer("difficulty_point")->nullable();
+            $table->integer("membership_num")->nullable();
         });
     }
 

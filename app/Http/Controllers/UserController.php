@@ -7,7 +7,6 @@ use Facade\FlareClient\Http\Exceptions\NotFound;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use function Psy\debug;
 
 class UserController extends Controller
 {
@@ -22,8 +21,6 @@ class UserController extends Controller
         if (!empty($request->keyWord)) {
             $SearchUserRowset = User::where("name", "like", "%" . $request->keyWord . "%")->get();
         }
-
-
 
         return view("user.index", compact("UserRowset", "SearchUserRowset"));
     }
@@ -44,6 +41,7 @@ class UserController extends Controller
         if (empty($AuthUserRow)) {
             abort(404);
         }
+
         return view("user.edit", compact("AuthUserRow"));
     }
 
@@ -58,6 +56,11 @@ class UserController extends Controller
         $UserRow->email = $request->email;
         $UserRow->save();
         return view("user.show", compact("UserRow"));
+    }
+
+    public function add()
+    {
+        return view("user.add");
     }
 
     public function member_management(Request $request)
